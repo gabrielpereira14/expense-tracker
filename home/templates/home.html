@@ -1,4 +1,5 @@
 {% load static %}
+{% load number_formatting  %}
 
 {% block scripts %}
     <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
@@ -37,14 +38,13 @@
             <canvas id="canvas" width="720" height="720" style="display:none;"></canvas>
 
         </div>
-
         <div id= "expense-list">   
             {% for expense in expenses %}
                 <div class= "expense">
                     <div class= "expense-header" onclick="toggleProductTable(this)">
                         <span>{{expense.establishment}}</span>
                         <span>{{expense.date}}</span>
-                        <span>{{expense.totalCost}}</span>
+                        <span>{{expense.totalCost|to_currency}}</span>
                     </div>
                     <table class="products-table">
                         <tr>
@@ -57,15 +57,15 @@
                             <tr>
                                 <td>{{product.name}}</td>
                                 <td>{{product.quantity}} {{product.unit}}</td>
-                                <td>{{product.unitPrice}}</td>
-                                <td>{{product.totalPrice}}</td>
+                                <td>{{product.unitPrice|to_currency}}</td>
+                                <td>{{product.totalPrice|to_currency}}</td>
                             </tr>
                         {% endfor %}
                     </table> 
                 </div>
             {% endfor %}
-                
         </div>
+
     </div>
     {% endblock %}
 </body>

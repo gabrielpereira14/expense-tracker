@@ -60,7 +60,7 @@ def processQrcodeData(url):
     response = requests.get(url)
 
     if not response.ok :
-        return (None, JsonResponse({'message': 'error'}, status = response.status_code))
+        return (None, JsonResponse({'error': 'Unable to get expense details'}, status = 503 ))
 
     html_content = response.content.decode("utf-8")
 

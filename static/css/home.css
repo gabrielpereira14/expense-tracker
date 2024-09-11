@@ -1,0 +1,150 @@
+:root{
+    --sidebar-size: 80px;
+}
+
+body{
+    display: flex;
+    background-color: lightgray;
+    padding: 0 0 0 var(--sidebar-size);
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    caret-color: transparent;
+}
+
+.sidebar{
+    width: var(--sidebar-size);
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    background-color: lightblue;
+    border-radius: 5px;
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    padding: 150px 0;
+    margin: 0;
+    overflow-x: hidden; 
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sidebar button{
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: black;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button:active {
+    color: white;
+  }
+
+.content{
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    height: 100%;
+    padding: 60;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+
+.page-header{
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+
+}
+
+#scanner-modal{
+    height: 500px;
+    width: 500px;
+    background-color: lightcyan;
+    border-radius: 20px;
+}
+
+.modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal .close-button{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    background-color: transparent;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 30;
+    right: 30;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#videocam{
+    border-radius: 20px;
+}
+
+#expense-list{
+    height: 60%;
+    width: 100%;
+    background-color: inherit;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.expense{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.expense-header{
+    display: flex;
+    align-items: center;
+    background-color: lightblue;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px 5px 0px 0px;
+    cursor: pointer;
+}
+
+.products-table{
+    display: none;
+    background-color: lightgray;
+    width: 100%;
+    padding: 8px 8px 8px 20%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.products-table  tr  td:not(:first-child){
+    text-align: right;
+}

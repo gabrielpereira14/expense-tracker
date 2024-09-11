@@ -11,6 +11,7 @@ import requests
 import re
 
 def process_expense_qrcode(request):
+    if 'image' not in request.POST: return JsonResponse({'created': False, 'error': 'Missing image'}, status = 400)
     data_url = request.POST['image']
     image_array = data_url_to_image_array(data_url)
 
